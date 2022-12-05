@@ -17,7 +17,19 @@ The dataset consists of 983 images of pizza and 983 images of non-pizza foods - 
 <img src="notebook_resources/pizza.jpg" alt="notebook_resources/pizza.jpg" title="Pizza and Not Pizza Images" width="480"/>
 Figure 1: Pizza and Not Pizza Images  <br />
 
-Per comments from the dataset provider (and the original dataset this data is sourced from, the food101 set), no preliminary preprocessing has been done on this dataset other than the aformentioned resizing. All image pixel values will thus need to be normalized before being input to our model CNN — we implement this via a normalization/standardization layer implemented in our model such that all image data input is automatically normalized before entering the actual CNN. Per the documentation, image flattening is not particularly necessary here.
+For models 1 and 3, we kept the images as a resolution of 256x256 and RGB.
+
+<img src="notebook_resources/secondmodel_pizzaimages.png" alt="notebook_resources/secondmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/>
+Figure 2: Gray-Scaled Pizza and Not Pizza Images  <br />
+
+For model 2, we kept the images at a resoltuion of 256x256, but we gray-scaled the images. 
+
+<img src="notebook_resources/fourthmodel_pizzaimages.png" alt="notebook_resources/fourthmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/>
+Figure 3: Lower Resolution Pizza and Not Pizza Images  <br />
+
+For model 4, we kept the RGB of the images but downscaled the resolution to 64x64. 
+
+All image pixel values will thus need to be normalized before being input to our model CNN — we implement this via a normalization/standardization layer implemented in our model such that all image data input is automatically normalized before entering the actual CNN. Per the documentation, image flattening is not particularly necessary here.
 
 ### First Model Pass
 The first model is an initial test model based on previous homeworks and examples from TensorFlow documentation on implementation of a basic convolution neural network without any data augmentation, primarily using ReLu activations (with one final sigmoid activation for binary classification), with the Adam optimizer and binary cross-entropy as our loss model — as such, it expectedly has very good accuracy and loss metrics in training, but has conversely inadequate accuracy and loss when using testing data. Classification reports and confusion matrices are provided to give more insight into the behavior of the model here. Potential updates to improve this model would likely include data augmentation to diversify the range of data the model gets, internal changes to the model itself (such as with different hidden layers, activation functions, or hyperparameters), and/or inclusion of a validation data split (natively supported by Keras) to monitor the model's performance with non-training data.
