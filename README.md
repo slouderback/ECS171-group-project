@@ -14,6 +14,8 @@ Data evaluation was performed mostly via importing all images to a Keras dataset
 # Pre-Processing
 The dataset consists of 983 images of pizza and 983 images of non-pizza foods - four outliers were culled, so we instead have 979 pizza images and 983 non-pizza food images. All images were resized by the provider to have either a width or height dimension of 512 pixels, with a varying dimension for the other dimension. While the Keras import will automatically resizes all images to 256x256, we additionally chose to crop all of the images such that we have uniform 1:1 square photos that are focused on the subject foods of each image via the Keras hyperparameter `crop_to_aspect_ratio`.
 
+<img src="notebook_resources/pizza.jpg" width="480"/>
+
 Per comments from the dataset provider (and the original dataset this data is sourced from, the food101 set), no preliminary preprocessing has been done on this dataset other than the aformentioned resizing. All image pixel values will thus need to be normalized before being input to our model CNN — we implement this via a normalization/standardization layer implemented in our model such that all image data input is automatically normalized before entering the actual CNN. Per the documentation, image flattening is not particularly necessary here.
 
 # First Model Pass
@@ -22,6 +24,9 @@ The first model is an initial test model based on previous homeworks and example
 # Second Model Pass
 
 ## Results
+
+<img src="notebook_resources/firstmodel_trainingresults.jpg" width="480"/>
+<img src="notebook_resources/firstmodel_testingresults.jpg" width="480"/>
 
 ## Discussion
 
