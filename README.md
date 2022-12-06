@@ -267,14 +267,27 @@ Figure 11: Fourth Model's Testing Results
 For the fourth model, during its training, it had a fairly high loss of 0.3742 and a somewhat low accuracy of 0.8420 comparable to the third model's training metrics. As shown in the classification reports above, for the training data, the precision and recall of Pizza and Not Pizza are 0.82 and 0.95 and also 0.94 and 0.78 respectively. The accuracy is 0.87. The precision, recall, and accuracy is very comparable to the third model. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.75 and 0.88 and also 0.87 and 0.72 respectively. The accuracy is 0.80, which is the highest accuracy out of all the models.
 
 ## Discussion
-
-<img src="notebook_resources/model-fit-graph.png" alt="notebook_resources/model-fit-graph.png" title="Model Fit Graph"  width="480"/>
-Figure 12: Model Fit Graph  
-
-Potential updates to improve the first model would likely include data augmentation to diversify the range of data the model gets, internal changes to the model itself (such as with different hidden layers, activation functions, or hyperparameters), and/or inclusion of a validation data split (natively supported by Keras) to monitor the model's performance with non-training data.
+Now, let's discuss our different model performances as well as our process of designing them.
+### First Model
+For our first model, we followed a design based on previous models that we have built for homework assignments, as well as Tensorflow documentation. This model was a prelimary attempt to get baseline results that we could improve upon. The performance on our testing data was not great, at only 59% accuracy. These results are understandable, as it was our first blind attempt. The accuracy is decent, but there is definitely room for improvement.
+### Second Model
+Our second model explored an additional method of data preprocessing through grayscaling all images of our dataset. This involves converting the RGB values of each pixel into a singular value. We removed a few hidden layers from the first model, yet found that the performance greatly improved. The accuracy of our second model jumped to 74%! As we can see, the image grayscaling resulted in an improvement in the performance of our model. The model performed perfectly on the training data, which could potentially be a sign of overfitting, but the performance on testing data is still quite good.
+### Third Model
+For our third model, we explored models with different numbers of layers and nodes to find a higher accuracy. We experimented with changes until finding a model configuration that produced favorable results. We settled on adding a few more hidden layers and reducing the number of nodes per layer. More specifically, we added 2 more hidden layers and reduced nodes per layer. This model's 73% accuracy is comparable to our second model, but still better than our baseline. It's likely that there exists an even better model configuration that yields higher accuracy, but given our limited resources and time, this model seemed to perform quite well.
+### Fourth Model
+Our final model used a combination of model configuration changes and data preprocessing and produced our best results. At an 80% accuracy, it easily beats out our baseline model, as well as our other two. We found these results fascinating, due to the changes that caused them. Downscaling the images to a smaller resolution and simplifying the model architecture resulted in our most accurate model! It appears that we found an effective preprocessing strategy and a model that fit our dataset the best. The model's performance on the training data and testing data is similar, which signals that there overfitting in this model either.
 
 ## Conclusion
-
+This project allowed us to use various skills that we have learned throughout this course to build a pizza image classifier. We built a convolutional neural network and explored different methods to improve its accuracy. We discovered that finding good performing model configurations takes a bit of luck in making the right changes. We found that different data pre-processing methods can greatly improve the performance of our models. Perhaps with more time and faster computing, we could have found an even more accurate model. As mentioned in the introduction, this project can definitely be expanded upon in the future. We could add new labels and work our way up to a general food classifier that can recognize a variety of different dishes. We could continue searching for that optimal model that yields the highest accuracy. But overall, we our satisfied with our results. We learned a lot through testing different models and are satisfied with our results.
 ## Collaboration
+Michael Dinh - Writer and Coder: Wrote Data Evaluation and Data Pre-processing sections of the writeup, wrote code and writeup for the first model and overall jupyter notebook organization
 
+Sheng Liu - Writer and Coder: Wrote code and writeup for the second model
 
+Sam Louderback - Writer and Coder: Wrote code and writeup for the third model
+
+Nima Bayati - Writer and Coder: Wrote code and writeup for the final model
+
+Richmond Ballesteros - Writer: Wrote the Methods and Results sections of the writeup
+
+Aaron Wong - Writer: Wrote Introduction, Discussion, and Conclusion sections of the writeup
