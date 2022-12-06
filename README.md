@@ -14,22 +14,22 @@ Data evaluation was performed mostly via importing all images to a Keras dataset
 ### Pre-Processing
 The dataset consists of 983 images of pizza and 983 images of non-pizza foods - four outliers were culled, so we instead have 979 pizza images and 983 non-pizza food images. All images were resized by the provider to have either a width or height dimension of 512 pixels, with a varying dimension for the other dimension. While the Keras import will automatically resizes all images to 256x256, we additionally chose to crop all of the images such that we have uniform 1:1 square photos that are focused on the subject foods of each image via the Keras hyperparameter `crop_to_aspect_ratio`.
 
-<img src="notebook_resources/pizza.jpg" alt="notebook_resources/pizza.jpg" title="Pizza and Not Pizza Images" width="480"/>
-Figure 1: Pizza and Not Pizza Images  <br />
+<img src="notebook_resources/pizza.jpg" alt="notebook_resources/pizza.jpg" title="Pizza and Not Pizza Images" width="480"/><br/>
+<b>Figure 1: Pizza and Not Pizza Images</b><br/>
 
-For models 1 and 3, we kept the images as a resolution of 256x256 and RGB.
+For models 1 and 3, we kept the images as a resolution of 256x256 and in RGB.
 
-<img src="notebook_resources/secondmodel_pizzaimages.png" alt="notebook_resources/secondmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/>
-Figure 2: Gray-Scaled Pizza and Not Pizza Images  <br />
+<img src="notebook_resources/secondmodel_pizzaimages.png" alt="notebook_resources/secondmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/><br/>
+<b>Figure 2: Gray-Scaled Pizza and Not Pizza Images</b><br/>
 
 For model 2, we kept the images at a resoltuion of 256x256, but we gray-scaled the images. 
 
-<img src="notebook_resources/fourthmodel_pizzaimages.png" alt="notebook_resources/fourthmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/>
-Figure 3: Lower Resolution Pizza and Not Pizza Images  <br />
+<img src="notebook_resources/fourthmodel_pizzaimages.png" alt="notebook_resources/fourthmodel_pizzaimages.png" title="Downscaled Pizza and Not Pizza Images" width="480"/><br/>
+<b>Figure 3: Lower Resolution Pizza and Not Pizza Images</b><br/>
 
-For model 4, we kept the RGB of the images but downscaled the resolution to 64x64. 
+For model 4, we kept the RGB channels of the images but downscaled the resolution to 64x64. 
 
-All image pixel values will thus need to be normalized before being input to our model CNN — we implement this via a normalization/standardization layer implemented in our model such that all image data input is automatically normalized before entering the actual CNN. Per the documentation, image flattening is not particularly necessary here.
+All image pixel values will thus need to be normalized before being input to our model CNN — we implement this via a normalization/standardization layer implemented in our model such that all image data input is automatically normalized before entering the actual CNN. Per the documentation, image flattening is not particularly necessary depending on how the data is input to the model.
 
 ### First Model Pass
 The first model is an initial test model based on previous homeworks and examples from TensorFlow documentation on implementation of a basic convolution neural network without any data augmentation, primarily using ReLu activations (with one final sigmoid activation for binary classification), with the Adam optimizer and binary cross-entropy as our loss model. 
@@ -166,10 +166,10 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 34s 678ms/step - loss: 0.1485 - accuracy: 0.9522
 ``` 
-<img src="notebook_resources/firstmodel_trainingresults.jpg" alt="notebook_resources/firstmodel_trainingresults.jpg" title="First Model Training Results"  width="480"/>
-Figure 4: First Model's Training Data Classification Report  
-<img src="notebook_resources/firstmodel_testingresults.jpg" alt="notebook_resources/firstmodel_testingresults.jpg" title="First Model Testing Results" width="480"/>
-Figure 5: First Model's Testing Data Classification Report  
+<img src="notebook_resources/firstmodel_trainingresults.jpg" alt="notebook_resources/firstmodel_trainingresults.jpg" title="First Model Training Results" width="480"/><br/>
+<b>Figure 4: First Model's Training Data Classification Report</b><br/>
+<img src="notebook_resources/firstmodel_testingresults.jpg" alt="notebook_resources/firstmodel_testingresults.jpg" title="First Model Testing Results" width="480"/><br/>
+<b>Figure 5: First Model's Testing Data Classification Report</b><br/>
 
 For our first draft model, it expectedly has very good accuracy of 0.9522 and loss metrics of 0.1485 in training, but has conversely inadequate accuracy and loss when using testing data. As shown by the figures of classification reports, the training data shows a very high precision and recall for Pizza and Not Pizza around 0.98 to 0.99 and a very high accuracy of 0.99. However, in the testing data, the precision, recall, and accuracy are much lower. The overall accuracy for the testing data is 0.57. The precision and recall for Pizza and Not Pizza are 0.56 and 0.52 and also 0.59 and 0.53 respectively.
 
@@ -197,10 +197,10 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 26s 511ms/step - loss: 0.0074 - accuracy: 1.0000
 ```
-<img src="notebook_resources/secondmodel_trainingdata.png" alt="notebook_resources/secondmodel_trainingdata.png" title="Second Model Training Results"  width="480"/>
-Figure 6: Second Model's Training Results  
-<img src="notebook_resources/secondmodel_testingdata.png" alt="notebook_resources/secondmodel_testingdata.png" title="Second Model Testing Results" width="480"/>
-Figure 7: Second Model's Testing Results  
+<img src="notebook_resources/secondmodel_trainingdata.png" alt="notebook_resources/secondmodel_trainingdata.png" title="Second Model Training Results" width="480"/> <br/>
+<b>Figure 6: Second Model's Training Results</b><br/>
+<img src="notebook_resources/secondmodel_testingdata.png" alt="notebook_resources/secondmodel_testingdata.png" title="Second Model Testing Results" width="480"/><br/>
+<b>Figure 7: Second Model's Testing Results</b><br/>
 
 For the second model, during its training, it had a very low loss of 0.0074 and a very high accuracy of 1.0000. As shown by the classification reports figures above, from the training data, the model's results were very good with the precision, recall, and accuracy all being 1.00. However, from the testing data, it is, expectedly, lower than the training data's results. For Pizza and Non Pizza, the precision and recall are 0.79 and 0.69 and also 0.70 and 0.79 respectively. The accuracy is 0.74. In comparison to the first model, the second model, in terms of precision, recall, and accuracy is much higher.
 
@@ -228,10 +228,10 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 31s 617ms/step - loss: 0.3855 - accuracy: 0.7981
 ```
-<img src="notebook_resources/thirdmodel_trainingresults.png" alt="notebook_resources/thirdmodel_trainingresults.png" title="Third Model Training Results"  width="480"/>
-Figure 8: Third Model's Training Results  
-<img src="notebook_resources/thirdmodel_testingresults.png" alt="notebook_resources/thirdmodel_testingresults.png" title="Third Model Testing Results" width="480"/>
-Figure 9: Third Model's Testing Results  
+<img src="notebook_resources/thirdmodel_trainingresults.png" alt="notebook_resources/thirdmodel_trainingresults.png" title="Third Model Training Results" width="480"/><br/>
+<b>Figure 8: Third Model's Training Results</b><br/>
+<img src="notebook_resources/thirdmodel_testingresults.png" alt="notebook_resources/thirdmodel_testingresults.png" title="Third Model Testing Results" width="480"/><br/>
+<b>Figure 9: Third Model's Testing Results</b><br/>
 
 For the third model, during its training, it had a somewhat large loss of 0.3855 and a somewhat low accuracy of 0.7981 compared to the first and second model's training. In the classification reports shown above, we can see the metrics from the training data. The precision and recall of Pizza and Not Pizza are 0.89 and 0.91 and also 0.91 and 0.89 respectively. The accuracy is 0.90. While these metrics are lower than the first and second model, they are stil fairly high. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.70 and 0.77 and also 0.76 and 0.68 respectively. The accuracy is 0.73. The precision, recall and accuracy are undoubtably higher than the first model's but comparable to the second model's.
 
@@ -259,10 +259,10 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 1s 16ms/step - loss: 0.3742 - accuracy: 0.8420
 ```
-<img src="notebook_resources/fourthmodel_trainingdata.png" alt="notebook_resources/fourthmodel_trainingdata.png" title="Fourth Model Training Results"  width="480"/>
-Figure 10: Fourth Model's Training Results  
-<img src="notebook_resources/fourthmodel_testingresults.png" alt="notebook_resources/fourthmodel_testingresults.png" title="Fourth Model Testing Results" width="480"/>
-Figure 11: Fourth Model's Testing Results  
+<img src="notebook_resources/fourthmodel_trainingdata.png" alt="notebook_resources/fourthmodel_trainingdata.png" title="Fourth Model Training Results" width="480"/><br/>
+<b>Figure 10: Fourth Model's Training Results</b><br/>
+<img src="notebook_resources/fourthmodel_testingresults.png" alt="notebook_resources/fourthmodel_testingresults.png" title="Fourth Model Testing Results" width="480"/><br/>
+<b>Figure 11: Fourth Model's Testing Results</b><br/>
 
 For the fourth model, during its training, it had a fairly high loss of 0.3742 and a somewhat low accuracy of 0.8420 comparable to the third model's training metrics. As shown in the classification reports above, for the training data, the precision and recall of Pizza and Not Pizza are 0.82 and 0.95 and also 0.94 and 0.78 respectively. The accuracy is 0.87. The precision, recall, and accuracy is very comparable to the third model. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.75 and 0.88 and also 0.87 and 0.72 respectively. The accuracy is 0.80, which is the highest accuracy out of all the models.
 
@@ -278,16 +278,17 @@ For our third model, we explored models with different numbers of layers and nod
 Our final model used a combination of model configuration changes and data preprocessing and produced our best results. At an 80% accuracy, it easily beats out our baseline model, as well as our other two. We found these results fascinating, due to the changes that caused them. Downscaling the images to a smaller resolution and simplifying the model architecture resulted in our most accurate model! It appears that we found an effective preprocessing strategy and a model that fit our dataset the best. The model's performance on the training data and testing data is similar, which signals that there overfitting in this model either.
 
 ## Conclusion
-This project allowed us to use various skills that we have learned throughout this course to build a pizza image classifier. We built a convolutional neural network and explored different methods to improve its accuracy. We discovered that finding good performing model configurations takes a bit of luck in making the right changes. We found that different data pre-processing methods can greatly improve the performance of our models. Perhaps with more time and faster computing, we could have found an even more accurate model. As mentioned in the introduction, this project can definitely be expanded upon in the future. We could add new labels and work our way up to a general food classifier that can recognize a variety of different dishes. We could continue searching for that optimal model that yields the highest accuracy. But overall, we our satisfied with our results. We learned a lot through testing different models and are satisfied with our results.
+This project allowed us to use various skills that we have learned throughout this course to build a pizza image classifier. We built a convolutional neural network and explored different methods to improve its accuracy. We discovered that finding good performing model configurations takes a bit of luck in making the right changes. We found that different data pre-processing methods can greatly improve the performance of our models. Perhaps with more time and faster computing, we could have found an even more accurate model — some additional methodologies could include data augmentation and implementation of a validation set while training. As mentioned in the introduction, this project can definitely be expanded upon in the future. We could add new labels and work our way up to a general food classifier that can recognize a variety of different dishes. We could continue searching for that optimal model that yields the highest accuracy. But overall, we our satisfied with our results. We learned a lot through testing different models and are satisfied with our results.
+
 ## Collaboration
-Michael Dinh - Writer and Coder: Wrote Data Evaluation and Data Pre-processing sections of the writeup, wrote code and writeup for the first model and overall jupyter notebook organization
+Michael Dinh - Writing/Programming: Data Evaluation and pre-processing sections of the writeup + proofreading, code and documentation for the first model / model evaluation, and overall Jupyter Notebook organization
 
-Sheng Liu - Writer and Coder: Wrote code and writeup for the second model
+Sheng Liu - Writing/Programming: Code and documentation for the second model
 
-Sam Louderback - Writer and Coder: Wrote code and writeup for the third model
+Sam Louderback - Writing/Programming: Code and documentation for the third model
 
-Nima Bayati - Writer and Coder: Wrote code and writeup for the final model
+Nima Bayati - Writing/Programming: Code and documentation for the final model
 
-Richmond Ballesteros - Writer: Wrote the Methods and Results sections of the writeup
+Richmond Ballesteros - Writing: Methods and results sections of the writeup
 
-Aaron Wong - Writer: Wrote Introduction, Discussion, and Conclusion sections of the writeup
+Aaron Wong - Writing: Introduction, discussion, and conclusion sections of the writeup
