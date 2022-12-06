@@ -22,7 +22,7 @@ For models 1 and 3, we kept the images as a resolution of 256x256 and in RGB.
 <img src="notebook_resources/secondmodel_pizzaimages.png" alt="notebook_resources/secondmodel_pizzaimages.png" title="Gray-Scaled Pizza and Not Pizza Images" width="480"/><br/>
 <b>Figure 2: Gray-Scaled Pizza and Not Pizza Images</b><br/>
 
-For model 2, we kept the images at a resoltuion of 256x256, but we gray-scaled the images. 
+For model 2, we kept the images at a resolution of 256x256, but we gray-scaled the images. 
 
 <img src="notebook_resources/fourthmodel_pizzaimages.png" alt="notebook_resources/fourthmodel_pizzaimages.png" title="Downscaled Pizza and Not Pizza Images" width="480"/><br/>
 <b>Figure 3: Lower Resolution Pizza and Not Pizza Images</b><br/>
@@ -233,7 +233,7 @@ Epoch 10/10
 <img src="notebook_resources/thirdmodel_testingresults.png" alt="notebook_resources/thirdmodel_testingresults.png" title="Third Model Testing Results" width="480"/><br/>
 <b>Figure 9: Third Model's Testing Results</b><br/>
 
-For the third model, during its training, it had a somewhat large loss of 0.3855 and a somewhat low accuracy of 0.7981 compared to the first and second model's training. In the classification reports shown above, we can see the metrics from the training data. The precision and recall of Pizza and Not Pizza are 0.89 and 0.91 and also 0.91 and 0.89 respectively. The accuracy is 0.90. While these metrics are lower than the first and second model, they are stil fairly high. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.70 and 0.77 and also 0.76 and 0.68 respectively. The accuracy is 0.73. The precision, recall and accuracy are undoubtably higher than the first model's but comparable to the second model's.
+For the third model, during its training, it had a somewhat large loss of 0.3855 and a somewhat low accuracy of 0.7981 compared to the first and second model's training. In the classification reports shown above, we can see the metrics from the training data. The precision and recall of Pizza and Not Pizza are 0.89 and 0.91 and also 0.91 and 0.89 respectively. The accuracy is 0.90. While these metrics are lower than the first and second model, they are still fairly high. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.70 and 0.77 and also 0.76 and 0.68 respectively. The accuracy is 0.73. The precision, recall and accuracy are undoubtably higher than the first model's but comparable to the second model's.
 
 ### Fourth Model Results
 
@@ -269,7 +269,7 @@ For the fourth model, during its training, it had a fairly high loss of 0.3742 a
 ## Discussion
 Now, let's discuss our different model performances as well as our process of designing them.
 ### First Model
-For our first model, we followed a design based on previous models that we have built for homework assignments, as well as Tensorflow documentation. This model was a prelimary attempt to get baseline results that we could improve upon. The performance on our testing data was not great, at only 59% accuracy. These results are understandable, as it was our first blind attempt. The accuracy is decent, but there is definitely room for improvement.
+For our first model, we followed a design based on previous models that we have built for homework assignments, as well as Tensorflow documentation. This model was a preliminary attempt to get baseline results that we could improve upon. The performance on our testing data was not great, at only 59% accuracy. These results are understandable, as it was our first blind attempt. The accuracy is decent, but there is definitely room for improvement.
 ### Second Model
 Our second model explored an additional method of data preprocessing through grayscaling all images of our dataset. This involves converting the RGB values of each pixel into a singular value. We removed a few hidden layers from the first model, yet found that the performance greatly improved. The accuracy of our second model jumped to 74%! As we can see, the image grayscaling resulted in an improvement in the performance of our model. The model performed perfectly on the training data, which could potentially be a sign of overfitting, but the performance on testing data is still quite good.
 ### Third Model
