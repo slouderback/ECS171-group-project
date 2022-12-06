@@ -228,7 +228,7 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 31s 617ms/step - loss: 0.3855 - accuracy: 0.7981
 ```
-<img src="notebook_resources/thirdmodel_trainingresults.png" alt="notebook_resources/thirdmodel_trainingresults.png" title="Third Model Training Results" width="480"/><br/>
+<img src="notebook_resources/new_file.png" alt="notebook_resources/thirdmodel_trainingresults.png" title="Third Model Training Results" width="480"/><br/>
 <b>Figure 8: Third Model's Training Results</b><br/>
 <img src="notebook_resources/thirdmodel_testingresults.png" alt="notebook_resources/thirdmodel_testingresults.png" title="Third Model Testing Results" width="480"/><br/>
 <b>Figure 9: Third Model's Testing Results</b><br/>
