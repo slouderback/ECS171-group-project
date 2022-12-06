@@ -165,12 +165,11 @@ Epoch 9/10
 50/50 [==============================] - 33s 665ms/step - loss: 0.1546 - accuracy: 0.9433
 Epoch 10/10
 50/50 [==============================] - 34s 678ms/step - loss: 0.1485 - accuracy: 0.9522
-```
-First Model's Accuracy and Loss During Training
+``` 
 <img src="notebook_resources/firstmodel_trainingresults.jpg" alt="notebook_resources/firstmodel_trainingresults.jpg" title="First Model Training Results"  width="480"/>
-Figure 4: First Model's Training Data Classification Report
+Figure 4: First Model's Training Data Classification Report  
 <img src="notebook_resources/firstmodel_testingresults.jpg" alt="notebook_resources/firstmodel_testingresults.jpg" title="First Model Testing Results" width="480"/>
-Figure 5: First Model's Testing Data Classification Report
+Figure 5: First Model's Testing Data Classification Report  
 
 For our first draft model, it expectedly has very good accuracy of 0.9522 and loss metrics of 0.1485 in training, but has conversely inadequate accuracy and loss when using testing data. As shown by the figures of classification reports, the training data shows a very high precision and recall for Pizza and Not Pizza around 0.98 to 0.99 and a very high accuracy of 0.99. However, in the testing data, the precision, recall, and accuracy are much lower. The overall accuracy for the testing data is 0.57. The precision and recall for Pizza and Not Pizza are 0.56 and 0.52 and also 0.59 and 0.53 respectively.
 
@@ -229,9 +228,9 @@ Epoch 9/10
 Epoch 10/10
 50/50 [==============================] - 31s 617ms/step - loss: 0.3855 - accuracy: 0.7981
 ```
-<img src="notebook_resources/thirdmodel_trainingdata.png" alt="notebook_resources/thirdmodel_trainingdata.png" title="Third Model Training Results"  width="480"/>
+<img src="notebook_resources/thirdmodel_trainingresults.png" alt="notebook_resources/thirdmodel_trainingresults.png" title="Third Model Training Results"  width="480"/>
 Figure 8: Third Model's Training Results  
-<img src="notebook_resources/thirdmodel_testingdata.png" alt="notebook_resources/thirdmodel_testingdata.png" title="Third Model Testing Results" width="480"/>
+<img src="notebook_resources/thirdmodel_testingresults.png" alt="notebook_resources/thirdmodel_testingresults.png" title="Third Model Testing Results" width="480"/>
 Figure 9: Third Model's Testing Results  
 
 For the third model, during its training, it had a somewhat large loss of 0.3855 and a somewhat low accuracy of 0.7981 compared to the first and second model's training. In the classification reports shown above, we can see the metrics from the training data. The precision and recall of Pizza and Not Pizza are 0.89 and 0.91 and also 0.91 and 0.89 respectively. The accuracy is 0.90. While these metrics are lower than the first and second model, they are stil fairly high. However, for the testing data, the precision and recall of Pizza and Not Pizza are 0.70 and 0.77 and also 0.76 and 0.68 respectively. The accuracy is 0.73. The precision, recall and accuracy are undoubtably higher than the first model's but comparable to the second model's.
